@@ -8,4 +8,3 @@ mongoose.connect(
     else console.log("DB Connection Succeeded");
   }
 );
-
