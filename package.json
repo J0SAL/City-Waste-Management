@@ -1,0 +1,23 @@
+{
+  "name": "octa-hacks-4.0",
+  "version": "1.0.0",
+  "description": "Change 1\r Change 2\r Change 3\r Change 4\r Sahil Change\r Jeet Change 5\r hello",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0SAL/Octa-Hacks-4.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J0SAL/Octa-Hacks-4.0/issues"
+  },
+  "homepage": "https://github.com/J0SAL/Octa-Hacks-4.0#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  }
+}
