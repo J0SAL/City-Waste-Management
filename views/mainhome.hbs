@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="/style.css">
 
     <title>Waste Management System</title>
+    
 </head>
-<body>
-    <body>
+    <body class='mainhome'>
+
 
 
     <!--========== HEADER ==========-->
@@ -23,15 +24,78 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="/about" class="nav__link">About</a></li>
 
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    <li class="nav__item"><a href="#authority/login" class="nav__link">Authority</a></li>
-                    <li class="nav__item"><a href="#user/login" class="nav__link">User</a></li>
+                    <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="/authority" class="nav__link">Authority</a></li>
+                    <li class="nav__item"><a href="/user" class="nav__link">User</a></li>
                  
                 </ul>
             </div>
         </nav>
     </header>
+<br><br><br><br><br>
+<div>
+<input type="button" class="button1 slide_down" value="Want to complain ?" >
+</div>
+<br>
+<div class="webinfo">
+    <marquee>SwachataWeb is a portal where citizens of India could easily complain about garbage collected in their locality/area as well.
+        The Respective Authority will take in charge of the complains recieved. Remember: Cleanliness is next to Godliness!</marquee>
+    </div>
+
+<div class="slideshow-container" align="left">
+    
+<div class="mySlides fade">
+  <img src="/images/slide1.jpeg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="/images/slide2.png" style="width:100%">
+</div>
+<div class="mySlides fade">
+  <img src="/images/slide3.jpg" style="width:100%">
+</div>
+<div class="mySlides fade">
+  <img src="/images/slide4.jpg" style="width:100%">
+</div>
+<div class="mySlides fade">
+  <img src="/images/slide5.jpg" style="width:100%">
+</div>
+<div>
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span> 
+  <span class="dot"></span>  
+</div>
+</div>
+
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000);
+}
+</script>
 </body>
 </html>
+
+
+
