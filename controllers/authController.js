@@ -1,3 +1,1 @@
-module.exports = function (app) {
-  console.log("Auth Controller");
-};
+//used for login and register requests functions
