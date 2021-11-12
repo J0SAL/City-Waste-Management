@@ -48,6 +48,11 @@
     <!--Container Main start-->
     <div class="height-100 bg-light">
         <h4>Main Components</h4>
+        {{#each data}}
+            {{this.fullName}}
+            {{this.email}}
+            {{this.locality}}
+        {{/each}}
     </div>
     
 </body>

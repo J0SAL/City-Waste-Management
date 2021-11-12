@@ -59,7 +59,7 @@ const complainSchema = new mongoose.Schema(
     userId: {
       type: String,
     },
-    userName: {
+    fullName: {
       type: String,
     },
     message: {

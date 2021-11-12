@@ -43,12 +43,15 @@ exports.findUser = (req, res) => {
     message = "session expired. Log in again";
     res.render("user_login", { message });
   }
+  else{
+    User.findOne({ _id: ObjectId(process.env.userID) }, function (err, data) {
+      if (err) throw err;
+      console.log(data);
+      res.render('user_dashboard',{data});
+    });
+  }
   //   console.log("obj id in env ", process.env.userID);
-  User.findOne({ _id: ObjectId(process.env.userID) }, function (err, data) {
-    if (err) throw err;
-    // console.log(data);
-    res.send(data);
-  });
+  
 };
 //updating user data
 //send only the data to be updated in key-value
