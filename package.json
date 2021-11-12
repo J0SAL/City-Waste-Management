@@ -1,10 +1,17 @@
 {
   "name": "octa-hacks-4.0",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Change 1\r Change 2\r Change 3\r Change 4\r Sahil Change\r Jeet Change 5\r hello",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+=======
+  "description": "Change 1\r Change 2\r Change 3",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+>>>>>>> 3b0d4817aff8bf634af9a31cc4c779e8538181aa
   },
   "repository": {
     "type": "git",
@@ -17,7 +24,19 @@
   },
   "homepage": "https://github.com/J0SAL/Octa-Hacks-4.0#readme",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.17.1",
     "mongoose": "^6.0.12"
+=======
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "hbs": "^4.1.2",
+    "mongodb": "^4.1.4",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
+>>>>>>> 3b0d4817aff8bf634af9a31cc4c779e8538181aa
   }
 }
