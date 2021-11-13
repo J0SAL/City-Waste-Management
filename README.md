@@ -1,26 +1,31 @@
 # City Waste Management
 
-<p>A Web Application to get crypto updates all in one place. </p>
-<p>CryptoNews uses `<b>Coin Ranking API</b>` to fetch the Data about all cryptocurrencies and exchanges such as the total market cap, trading volume, number of coins and mush more. Also this Application uses `<b>Bing News Search API</b>` to get news and updates about the cryptocurrencies around the globe. The Application is built with `<b>ReactJS</b>` and various libraries like `<b>Router</b>`, `<b>Redux-toolkit</b>` for Routing and State Management and designed with `<b>Antd</b>` that contains a set of high quality components and demos for building rich, interactive user interfaces.</p>
+<p>A Web Application App to help reduce city waste. </p>
+<p>City Waste Management is an Web Application through an individual can directly make a request to clear garbages in his/any region. An Individual has to register into the application and just upload the data i.e. locality and image of uncleaned area. This request will directly sent to respective authority assigned to that area so that he'll be able to take some actions on the same. The continuos progress of the request will be continuosly updated into users portal.</p>
 
 ## Demo
 
-https://cryptonews-josal.netlify.app
+
 
 
 ## Screenshots
 
-- ### Home Page
-  <img src="https://user-images.githubusercontent.com/52382282/140717672-69e480f1-049d-4cc5-8b34-9f69c6619e82.PNG" alt="drawing" width="800"/>
+- ### Home Page!
 
-- ### Crypto Details
-  <img src="https://user-images.githubusercontent.com/52382282/140717194-e435df7a-c342-4f88-9070-439deeff55c1.PNG" alt="drawing" width="800"/>
+  <img src="https://user-images.githubusercontent.com/52382282/141660483-f19c30e0-77cc-405e-99c6-78b4326f30f9.PNG" alt="drawing" width="800"/>
+
+- ### User Login Page
+  <img src="https://user-images.githubusercontent.com/52382282/141660486-a02b16ef-1b30-45c9-b50d-c9335663505a.PNG" alt="drawing" width="800"/>
+
+- ### User Complain Status page
+  <img src="https://user-images.githubusercontent.com/52382282/141660506-6188855c-2cfd-4a35-892d-de352dedeb45.PNG" alt="drawing" width="800"/>
+
+- ### Register complain Page
+  <img src="https://user-images.githubusercontent.com/52382282/141660514-41a8e686-ded7-428d-bf69-d0b7150ce66a.PNG" alt="drawing" width="800"/>
   
-- ### Exchanges
-  <img src="https://user-images.githubusercontent.com/52382282/140717736-7bf876b9-67b3-4a60-9464-8a5a66ccaa99.PNG" alt="drawing" width="800"/>
-  
-- ### News
-  <img src="https://user-images.githubusercontent.com/52382282/140717742-bb060cfb-8e1e-40c9-b320-c6f6adf23522.PNG" alt="drawing" width="800"/>
+- ### Authority Dashboard
+  <img src="https://user-images.githubusercontent.com/52382282/141660518-98544f84-02b4-41c3-8fb4-af108cbb4e5f.PNG" alt="drawing" width="800"/>
+
 
 
 ## Built With
@@ -55,5 +60,10 @@ npm start
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`REACT_APP_API_KEY= YOUR_API_KEY_HERE`
+`DB_CONN= YOUR_DB_URL_HERE`
 
+
+## Team Members
+1. [Joy Almeida](https://github.com/J0SAL)
+2. [Jeet Mistry](https://github.com/jeetmistry)
+3. [Sahil Chorghe](https://github.com/Sahil222001)
