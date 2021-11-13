@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="/sidebar.css">
+
+    <title>Waste Management System</title>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav_logo"> 
+                    <i class='bx bx-layer nav_logo-icon'></i> 
+                    <span class="nav_logo-name">Home</span> 
+                </a>
+                <div class="nav_list"> 
+                    <a href="/user/dashboard" class="nav_link active">
+                        <i class='bx bx-grid-alt nav_icon'></i> 
+                        <span class="nav_name">Profile</span> 
+                    </a> 
+                    <a href="/user/file_complaint" class="nav_link"> 
+                        <i class='bx bx-user nav_icon'></i> 
+                        <span class="nav_name">File Complaint</span> 
+                    </a> 
+                    <a href="/user/view_complaints" class="nav_link"> 
+                        <i class='bx bx-message-square-detail nav_icon'></i> 
+                        <span class="nav_name">View Complaints</span> 
+                    </a> 
+                    
+                </div>
+            </div> 
+            <a href="/" class="nav_link"> 
+                <i class='bx bx-log-out nav_icon'></i> 
+                <span class="nav_name">SignOut</span> 
+            </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+        <h4>File Complaint</h4>
+        <form class="row g-3" action="/user/file_complaint/submit" method="post">
+            <div class="col-md-4">
+                <label for="fullname" class="form-label">Full name</label>
+                <input type="text" class="form-control" id="fullname" value="" required>
+
+                <label for="message" class="form-label">Message</label>
+                <input type="text" class="form-control" id="message" name="message" value="" required>
+
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" value="" required>
+
+
+                <label for="locality" class="form-label">Locality</label>
+                <select class="form-select" id="locality" name="locality" required>
+                <option selected disabled value="">Choose</option>
+                <option>Mumbai</option>
+                <option>Pune</option>
+                <option>Ahemdabad</option>
+                <option>Mumbai</option>
+                </select>
+
+                <label for="image" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="image" name="image" value="" placeholder="Image URL here" required>
+                
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">File Complaint</button><br>
+            </div>
+            </form>
+    </div>
+    
+</body>
+<script src="sidebar.js"></script>
+</html>

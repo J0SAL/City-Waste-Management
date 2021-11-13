@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="/sidebar.css">
+
+    <title>Waste Management System</title>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav_logo"> 
+                    <i class='bx bx-layer nav_logo-icon'></i> 
+                    <span class="nav_logo-name">Home</span> 
+                </a>
+                <div class="nav_list"> 
+                    <a href="/user/dashboard" class="nav_link active">
+                        <i class='bx bx-grid-alt nav_icon'></i> 
+                        <span class="nav_name">Profile</span> 
+                    </a> 
+                    <a href="/user/file_complaint" class="nav_link"> 
+                        <i class='bx bx-user nav_icon'></i> 
+                        <span class="nav_name">File Complaint</span> 
+                    </a> 
+                    <a href="/user/view_complaints" class="nav_link"> 
+                        <i class='bx bx-message-square-detail nav_icon'></i> 
+                        <span class="nav_name">View Complaints</span> 
+                    </a> 
+                    
+                </div>
+            </div> 
+            <a href="/" class="nav_link"> 
+                <i class='bx bx-log-out nav_icon'></i> 
+                <span class="nav_name">SignOut</span> 
+            </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+        <h4>User Profile Details</h4>
+        {{#if rows}}
+        <h1>Name : {{rows.fullName}}</h1>
+        <h1>Email : {{rows.email}}</h1>
+        <h1>Locality : {{rows.locality}}</h1>
+        <h1>Complaint Count : {{rows.complainCount}}</h1>
+        {{/if}}
+    </div>
+    
+</body>
+<script src="sidebar.js"></script>
+</html>
