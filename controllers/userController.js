@@ -14,11 +14,12 @@ exports.getAllUsers = (req, res) => {
 
 //register User
 exports.registerUser = (req, res) => {
-  const newUser = new User(req.body);
-  newUser.save((err, data) => {
-    if (err) throw err;
-    res.json(data);
-  });
+  console.log(req.body);
+  // const newUser = new User(req.body);
+  // newUser.save((err, data) => {
+  //   if (err) throw err;
+  //   res.json(data);
+  // });
 };
 
 //for login

@@ -40,7 +40,7 @@ router.get("/authority_register", (req, res) => {
 router.get("/login_user", (req, res) => {
   res.render("user_login");
 });
-
+/auth/user_register
 router.post("/auth/user_register", userController.registerUser);
 router.post("/auth/user/login", userController.loginUser);
 router.get("/auth/user/dashboard", userController.findUser);
