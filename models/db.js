@@ -1,14 +1,10 @@
 const mongoose = require("mongoose");
-const { serializeInteger } = require("whatwg-url");
-
+require("dotenv").config();
 //Connect to the database
-mongoose.connect(
-  "mongodb+srv://octa-hack:octa-hack@octa-hacks-4.fkdso.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  (err) => {
-    if (err) console.log("DB Connection Error ", err);
-    else console.log("DB Connection Succeeded");
-  }
-);
+mongoose.connect(process.env.DB_CONN, (err) => {
+  if (err) console.log("DB Connection Error ", err);
+  else console.log("DB Connection Succeeded");
+});
 
 //Create schema - this is like a blueprint
 const userSchema = new mongoose.Schema(
