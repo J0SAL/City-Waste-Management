@@ -1,14 +1,17 @@
 {
   "name": "octa-hacks-4.0",
   "version": "1.0.0",
-  "description": "Change 1\r Change 2\r Change 3",
+  "description": "First Hackthon project",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "14.16.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/J0SAL/Octa-Hacks-4.0.git"
+    "url": "https://github.com/J0SAL/Octa-Hacks-4.0.git"
   },
   "author": "",
   "license": "ISC",
