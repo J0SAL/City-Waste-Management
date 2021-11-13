@@ -8,7 +8,17 @@ const complainController = require("../controllers/complainController");
 //route for going to homepage of the website
 router.get("/", (req, res) => {
   //   res.render("mainhome");
-  res.render("user_dashboard");
+  res.render("mainhome");
+});
+
+router.get("/about", (req, res) => {
+  //   res.render("mainhome");
+  res.render("about");
+});
+
+router.get("/contact", (req, res) => {
+  //   res.render("mainhome");
+  res.render("contact");
 });
 
 //route to go to authority login page
