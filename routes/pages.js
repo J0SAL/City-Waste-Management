@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 const userController = require("../controllers/userController");
+const authorityController = require("../controllers/authorityController");
+const complainController = require("../controllers/complainController");
 
 //route for going to homepage of the website
 router.get("/", (req, res) => {
@@ -32,4 +34,32 @@ router.get("/login_user", (req, res) => {
 router.post("/auth/user_register", userController.registerUser);
 router.post("/auth/user/login", userController.loginUser);
 router.get("/auth/user/dashboard", userController.findUser);
+
+//Testing
+/* Authorities */
+
+// register authorities
+router.post("/Authorities", authorityController.registerAuthority);
+//get all authorities
+router.get("/Authorities", authorityController.getAllAuthorities);
+// get authority by id--
+router.get("/Authority/id", authorityController.findAuthority);
+// login authorities by email - password
+router.post("/loginAuthority", authorityController.loginAuthority);
+// update authority by id
+router.put("/Authority/:id", authorityController.updateAuthority);
+// delete authority by id
+router.delete("/Authority/:id", authorityController.deleteAuhtority);
+
+/* Complains */
+router.get("/Complaints", complainController.getAllComplaints);
+router.get("/ComplaintsID/:id", complainController.findUserComplain); //->not working
+router.get(
+  "/ComplaintsLocality/:locality",
+  complainController.findLocalityComplain
+);
+router.post("/Complaints", complainController.registerComplain);
+router.delete("/Complaints/:id", complainController.deleteComplain);
+router.put("/Complain/:id", complainController.updateComplain);
+
 module.exports = router;

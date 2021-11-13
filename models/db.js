@@ -65,6 +65,9 @@ const complainSchema = new mongoose.Schema(
     message: {
       type: String,
     },
+    status: {
+      type: String,
+    },
     userEmail: {
       type: String,
     },

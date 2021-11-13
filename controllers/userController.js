@@ -12,6 +12,7 @@ exports.getAllUsers = (req, res) => {
   });
 };
 
+//register User
 exports.registerUser = (req, res) => {
   const newUser = new User(req.body);
   newUser.save((err, data) => {
@@ -42,13 +43,14 @@ exports.findUser = (req, res) => {
   if (process.env.userID == undefined) {
     message = "session expired. Log in again";
     res.render("user_login", { message });
+  } else {
+    //   console.log("obj id in env ", process.env.userID);
+    User.findOne({ _id: ObjectId(process.env.userID) }, function (err, data) {
+      if (err) throw err;
+      // console.log(data);
+      res.send(data);
+    });
   }
-  //   console.log("obj id in env ", process.env.userID);
-  User.findOne({ _id: ObjectId(process.env.userID) }, function (err, data) {
-    if (err) throw err;
-    // console.log(data);
-    res.send(data);
-  });
 };
 //updating user data
 //send only the data to be updated in key-value
