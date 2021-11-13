@@ -2,23 +2,13 @@
   "name": "octa-hacks-4.0",
   "version": "1.0.0",
   "description": "First Hackthon project",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
   "engines": {
     "node": "14.16.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/J0SAL/Octa-Hacks-4.0.git"
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/J0SAL/Octa-Hacks-4.0/issues"
-  },
-  "homepage": "https://github.com/J0SAL/Octa-Hacks-4.0#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -29,5 +19,19 @@
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {
+    "got": "^11.3.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0SAL/Octa-Hacks-4.0.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "ISC"
 }
