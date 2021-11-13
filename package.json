@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/J0SAL/Octa-Hacks-4.0.git"
+    "url": "git+https://github.com/J0SAL/Octa-Hacks-4.0.git"
   },
   "author": "",
   "license": "ISC",
