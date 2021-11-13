@@ -14,42 +14,72 @@ exports.getAllUsers = (req, res) => {
 
 //register User
 exports.registerUser = (req, res) => {
-  console.log(req.body);
-  // const newUser = new User(req.body);
-  // newUser.save((err, data) => {
-  //   if (err) throw err;
-  //   res.json(data);
-  // });
+  if (req.body.password != req.body.confirmpassword) {
+    message = "Password and confirm password doesnt match";
+    res.render("user_register", { message });
+  } else {
+    const newUser = new User();
+    newUser.fullName = req.body.fullname;
+    newUser.password = req.body.password;
+    newUser.email = req.body.email;
+    newUser.locality = req.body.locality;
+    newUser.complainCount = 0;
+
+    newUser.save((err, data) => {
+      if (err) throw err;
+      else {
+        message = "Register Successfull, please login";
+        res.render("user_login", { message });
+      }
+    });
+  }
 };
 
 //for login
 exports.loginUser = (req, res) => {
-  User.findOne({ email: req.body.email }, function (err, data) {
-    if (err) throw err;
-    if (data) {
-      if (data.password === req.body.password) {
-        process.env["userID"] = data._id;
-        res.send(data);
-      } else {
-        res.send("Invalid Password");
-      }
+  // console.log(req.body);
+  // res.render("user_login");
+  User.findOne({ email: req.body.email }, (err, data) => {
+    if (err) {
+      message = "User cannobe be found";
+      res.render("user_login", { message });
     } else {
-      res.send("Invalid Email");
+      if (data) {
+        if (data.password === req.body.password) {
+          process.env["userID"] = data._id;
+          process.env["userName"] = data.fullName;
+          process.env["userEmail"] = data.userEmail;
+          res.redirect("/user/dashboard");
+        } else {
+          message = "User cannobe be found";
+          res.render("user_login", { message });
+        }
+      } else {
+        message = "User cannobe be found";
+        res.render("user_login", { message });
+      }
     }
   });
 };
 
 // find user
 exports.findUser = (req, res) => {
-  if (process.env.userID == undefined) {
+  if (
+    process.env.userID == undefined ||
+    process.env.userName == undefined ||
+    process.env.userEmail == undefined
+  ) {
     message = "session expired. Log in again";
     res.render("user_login", { message });
   } else {
     //   console.log("obj id in env ", process.env.userID);
-    User.findOne({ _id: ObjectId(process.env.userID) }, function (err, data) {
-      if (err) throw err;
-      // console.log(data);
-      res.send(data);
+    User.findOne({ _id: ObjectId(process.env.userID) }, function (err, rows) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(rows);
+        res.render("user_dashboard", { rows });
+      }
     });
   }
 };
