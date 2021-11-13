@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Waste Management System</title>
+</head>
+<body>
+    <body>
+
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo">Waste Management System</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="/about" class="nav__link">About</a></li>
+
+                    <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="/authority_register" class="nav__link">Authority</a></li>
+                    <li class="nav__item"><a href="/user_register" class="nav__link">User</a></li>
+                 
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    user register form 
+    <section style="margin-left:100px; margin-top:100px">
+        <form class="row g-3" method="post" action="/auth/authority_register">
+            <div class="col-md-4">
+                <label for="fullname" class="form-label">Full name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" value="" required>
+
+                <label for="email" class="form-label">Email</label>
+                <div class="input-group">
+                <span class="input-group-text" id="span@">@</span>
+                <input type="text" class="form-control" id="email" name="email" aria-describedby="span@" required>
+                </div>
+
+                <label for="locality" class="form-label">Locality</label>
+                <select class="form-select" id="locality" name="locality" required>
+                <option selected disabled value="">Choose</option>
+                <option>Mumbai</option>
+                <option>Pune</option>
+                <option>Ahemdabad</option>
+                <option>Mumbai</option>
+                </select>
+                
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control" id="password" name="password" type="password" required>
+
+                <label for="confirmpassword" class="form-label">Confirm Password</label>
+                <input class="form-control" id="confirmpassword" name="confirmpassword" type="password" required>
+            </div>
+            
+            <div class="col-md-4" style="margin-left:300px" >
+                
+                <div class="text-center">
+                    <h1>Register Authority</h1>
+                    <img src="https://www.icarsh.org/wp-content/uploads/2018/10/Reg-online.png" style="height: 300px;" class="rounded" alt="...">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                </label>
+                </div>
+            </div>
+
+            {{#if message}}
+                <h6 style="color: red;"> {{this.message}}</h6>
+                {{else}}
+                    <h6 style="color: orange;"> <i>*Enter valid data</i> </h6>
+            {{/if}}
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Register</button><br>
+                Already registered ? <a href="/login_authority">Login here</a>
+            </div>
+
+            
+            </form>
+    </section>
+
+    
+</body>
+</html>

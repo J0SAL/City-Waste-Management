@@ -57,4 +57,3 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_API_KEY= YOUR_API_KEY_HERE`
 
-
