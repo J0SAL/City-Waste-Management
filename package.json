@@ -4,7 +4,7 @@
   "description": "Change 1\r Change 2\r Change 3",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
