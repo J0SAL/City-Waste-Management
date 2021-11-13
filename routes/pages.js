@@ -7,17 +7,14 @@ const complainController = require("../controllers/complainController");
 
 //route for going to homepage of the website
 router.get("/", (req, res) => {
-  //   res.render("mainhome");
-  res.render("mainhome");
+    res.render("mainhome");
 });
 
 router.get("/about", (req, res) => {
-  //   res.render("mainhome");
   res.render("about");
 });
 
 router.get("/contact", (req, res) => {
-  //   res.render("mainhome");
   res.render("contact");
 });
 
@@ -41,21 +38,30 @@ router.get("/login_user", (req, res) => {
   res.render("user_login");
 });
 
+router.get("/user/file_complaint",(req,res)=>{
+  if (process.env.userID == undefined || process.env.userName == undefined || process.env.userEmail == undefined) {
+    message = "session expired. Log in again";
+    res.render("user_login", { message });
+  }else{
+  res.render("user_file_complaint");
+  }
+})
+
 router.post("/auth/user_register", userController.registerUser);
 router.post("/auth/user/login", userController.loginUser);
-router.get("/auth/user/dashboard", userController.findUser);
+router.get("/user/dashboard", userController.findUser);
 
 //Testing
 /* Authorities */
 
 // register authorities
-router.post("/Authorities", authorityController.registerAuthority);
+router.post("/auth/authority_register", authorityController.registerAuthority);
 //get all authorities
 router.get("/Authorities", authorityController.getAllAuthorities);
 // get authority by id--
-router.get("/Authority/id", authorityController.findAuthority);
+router.get("/authority/dashboard", authorityController.findAuthority);
 // login authorities by email - password
-router.post("/loginAuthority", authorityController.loginAuthority);
+router.post("/auth/authority/login", authorityController.loginAuthority);
 // update authority by id
 router.put("/Authority/:id", authorityController.updateAuthority);
 // delete authority by id
@@ -63,13 +69,13 @@ router.delete("/Authority/:id", authorityController.deleteAuhtority);
 
 /* Complains */
 router.get("/Complaints", complainController.getAllComplaints);
-router.get("/ComplaintsID/:id", complainController.findUserComplain); //->not working
+router.get("/user/view_complaints", complainController.findUserComplain);
 router.get(
-  "/ComplaintsLocality/:locality",
+  "/authority/view_complaints",
   complainController.findLocalityComplain
 );
-router.post("/Complaints", complainController.registerComplain);
-router.delete("/Complaints/:id", complainController.deleteComplain);
-router.put("/Complain/:id", complainController.updateComplain);
+router.post("/user/file_complaint/submit", complainController.registerComplain);
+router.get("/user/view_complaint/delete/:id", complainController.deleteComplain);
+router.get("/authority/view_complaint/:status/:id", complainController.updateComplain);
 
 module.exports = router;

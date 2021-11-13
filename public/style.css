@@ -117,6 +117,7 @@ nav li a:hover {
 .nav__toggle {
   color: var(--text-color);
   font-weight: var(--font-medium);
+  margin-left:25px;
 }
 
 .nav__logo:hover {
@@ -241,7 +242,7 @@ nav li a:hover {
   color: yellow;
 }
 
-.nav__link,
+/* .nav__link,
 .nav__logo,
 .nav__toggle {
   color: var(--text-color);
@@ -250,7 +251,7 @@ nav li a:hover {
 
 .nav__logo:hover {
   color: var(--first-color);
-}
+} */
 
 .slideshow-container {
   position: relative;
