@@ -46,7 +46,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 # Clone this repository
 git clone https://github.com/J0SAL/Octa-Hacks-4.0.git
 # Go into the repository
-cd ReactJS-Octa-Hacks-4.0
+cd Octa-Hacks-4.0
 # Install dependencies
 npm install
 # Run the app
