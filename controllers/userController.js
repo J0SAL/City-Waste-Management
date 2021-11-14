@@ -37,7 +37,7 @@ exports.registerUser = (req, res) => {
 
 //for login
 exports.loginUser = (req, res) => {
-  // console.log(req.body);
+  // //console.log(req.body);
   // res.render("user_login");
   User.findOne({ email: req.body.email }, (err, data) => {
     if (err) {
@@ -72,12 +72,12 @@ exports.findUser = (req, res) => {
     message = "session expired. Log in again";
     res.render("user_login", { message });
   } else {
-    //   console.log("obj id in env ", process.env.userID);
+    //   //console.log("obj id in env ", process.env.userID);
     User.findOne({ _id: ObjectId(process.env.userID) }, function (err, rows) {
       if (err) {
-        console.log(err);
+        //console.log(err);
       } else {
-        console.log(rows);
+        //console.log(rows);
         res.render("user_dashboard", { rows });
       }
     });

@@ -12,46 +12,44 @@ exports.getAllAuthorities = (req, res) => {
 
 //register Authority
 exports.registerAuthority = (req, res) => {
-  if(req.body.password != req.body.confirmpassword){
+  if (req.body.password != req.body.confirmpassword) {
     message = "Password and confirm password doesnt match";
-    res.render("authority_register",{message});
-  }
-  else{
+    res.render("authority_register", { message });
+  } else {
     const newAuthority = new Authority();
     newAuthority.fullName = req.body.fullname;
     newAuthority.email = req.body.email;
     newAuthority.password = req.body.password;
     newAuthority.registeredArea = req.body.locality;
     newAuthority.save((err, data) => {
-    if (err) throw err;
-    else{
-      message = "Register Successfull, please login"
-      res.render("authority_login",{message})
-    }
-  });
+      if (err) throw err;
+      else {
+        message = "Register Successfull, please login";
+        res.render("authority_login", { message });
+      }
+    });
   }
-  
 };
 
 //for login
 exports.loginAuthority = (req, res) => {
   Authority.findOne({ email: req.body.email }, function (err, data) {
-    if (err){
-      message = "Authority cannot be found"
-      res.render("authority_login",{message});
-    };
+    if (err) {
+      message = "Authority cannot be found";
+      res.render("authority_login", { message });
+    }
     if (data) {
       if (data.password === req.body.password) {
         process.env["authorityID"] = data._id;
         process.env["area"] = data.registeredArea;
-        res.redirect('/authority/dashboard');
+        res.redirect("/authority/dashboard");
       } else {
-        message = "Incorrect Password"
-        res.render("authority_login",{message});
+        message = "Incorrect Password";
+        res.render("authority_login", { message });
       }
     } else {
-        message = "Authority cannot be found"
-        res.render("authority_login",{message});
+      message = "Authority cannot be found";
+      res.render("authority_login", { message });
     }
   });
 };
@@ -60,19 +58,16 @@ exports.loginAuthority = (req, res) => {
 exports.findAuthority = (req, res) => {
   if (process.env.authorityID == undefined || process.env.area == undefined) {
     message = "Session expired. Log in again";
-    res.render("authority_login",{message});
+    res.render("authority_login", { message });
   } else {
-
     Authority.findOne(
       { _id: ObjectId(process.env.authorityID) },
       function (err, rows) {
-        if (err){
-          console.log(err);
-        }
-  
-        else{
-          console.log(rows);
-          res.render("authority_dashboard",{rows});
+        if (err) {
+          // console.log(err);
+        } else {
+          // console.log(rows);
+          res.render("authority_dashboard", { rows });
         }
       }
     );
