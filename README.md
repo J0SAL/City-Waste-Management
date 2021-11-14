@@ -47,9 +47,9 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/J0SAL/Octa-Hacks-4.0.git
+git clone https://github.com/J0SAL/City-Waste-Management.git
 # Go into the repository
-cd Octa-Hacks-4.0
+cd City-Waste-Management
 # Install dependencies
 npm install
 # Run the app
